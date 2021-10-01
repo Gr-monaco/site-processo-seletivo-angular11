@@ -1,0 +1,38 @@
+<!-- Cabeçalho com imagem -->
+<!-- A imgem vem de um site de imagens gratis, se o link desaparecer, não tem imagem-->
+<div class="header">
+    <div >
+        <h1>SITE DE PROGRAMAÇÃO</h1>
+        <p>Central de programação</p>
+    </div>
+</div> 
+
+<!-- Conteudo do Site -->
+<button-bar class="nav-buttons"  (emitterFormOpen)="updateValueCadastro($event)" (emitterTableState)="updateValueTabela($event)"></button-bar><br>
+<div class="background-content-div">
+    <div class="content-inside-div">
+        <sign-up-form *ngIf='cadastroVisivel' (emitterFormClose)="updateValueCadastro($event)" (emitterFormOpen)="updateValueCadastro($event)" (emitterTableOpen)="updateValueTabela($event)"></sign-up-form>
+        <table-list *ngIf='tabelaVisivel'></table-list>  
+        <section style="padding-top: 5px;padding-bottom: 5px;">
+
+            <!-- Barras -->
+            <hr style="width:100%;text-align:center;margin-left:0">
+            <hr style=" margin-right: 2%; margin-left: 2%;text-align:center;">
+
+            <h1 style = "margin: 0px; padding: 15px 0px 0px 0px" >
+                Postagens
+            </h1>
+            <div style="margin-bottom: 50px;">
+                <h2>
+                    Artigo
+                </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus vitae earum consectetur dignissimos veniam provident distinctio, ipsa eaque neque voluptates doloribus accusamus! Qui consequuntur assumenda nostrum consectetur, nisi necessitatibus sapiente?</p>
+            </div>
+
+            <!-- Barras -->
+            <hr style=" margin-right: 2%; margin-left: 2%;text-align:center;">
+            <hr style="width:100%;text-align:center;margin-left:0">
+            
+        </section>
+    </div>
+</div>
