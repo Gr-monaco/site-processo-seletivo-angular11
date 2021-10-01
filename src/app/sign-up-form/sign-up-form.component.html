@@ -1,0 +1,30 @@
+<div style="padding-top: 10px;">
+
+    <!-- Barras -->
+    <hr style="width:100%;text-align:left;margin-left:0">
+ 
+    <h1>Cadastro</h1>
+ 
+    <hr style="width:100%;text-align:left;margin-left:0">
+ 
+    <!-- Conteudo do formulário -->
+    <label>Nome:</label><br>
+    <input type="text" [(ngModel)]="userProfile.name"><br><br>
+    <label>E-mail:</label><br>
+    <input type="text"[(ngModel)]="userProfile.email"><br><br>
+    <label>Telefone:</label><br>
+    <input type="text" [(ngModel)]="userProfile.telefone"><br><br>
+    <label>Endereço:</label><br>
+    <input type="text" [(ngModel)]="userProfile.endereco"><br><br>
+    <label>Idade:</label><br>
+    <input type="number" digitOnly [(ngModel)]="userProfile.idade"><br><br>
+    <label>Preferência:</label><br>
+    <select name="linguagens" id="ling" [(ngModel)]="userProfile.preferencia">
+       <option [value]="preference" *ngFor="let preference of options">{{preference}}</option>
+    </select><br><br>
+ 
+    <!-- Botões -->
+    <button (click)="functionToCallFormOpen(); updateProfile($event); functionToCallTableOpen()" [disabled]='getButtonState()' >Enviar</button>
+    <button (click)="cancelCadastro()">Cancelar</button>
+ </div>
+ 
