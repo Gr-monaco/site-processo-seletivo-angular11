@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserProfileService } from '../user-profile.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { UserProfileService } from '../user-profile.service';
   styleUrls: ['./table-list.component.css']
 })
 export class TableListComponent implements OnInit {
+
+  @Output() emitterTableState = new EventEmitter<boolean>();
 
   constructor(public userProfileService : UserProfileService) { }
 
@@ -24,6 +26,10 @@ export class TableListComponent implements OnInit {
       'pref-lisp': userProfileService.preferencia == 'Lisp',
       'pref-java': userProfileService.preferencia == 'Java'
     }
+  }
+
+  functionToCloseTableList(){
+    this.emitterTableState.emit(false);
   }
 
   ngOnInit(): void {

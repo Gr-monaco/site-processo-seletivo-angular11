@@ -12,7 +12,7 @@
 <div class="background-content-div">
     <div class="content-inside-div">
         <sign-up-form *ngIf='cadastroVisivel' (emitterFormClose)="updateValueCadastro($event)" (emitterFormOpen)="updateValueCadastro($event)" (emitterTableOpen)="updateValueTabela($event)"></sign-up-form>
-        <table-list *ngIf='tabelaVisivel'></table-list>  
+        <table-list *ngIf='tabelaVisivel' (emitterTableState)="updateValueTabela($event)"></table-list>  
         <section style="padding-top: 5px;padding-bottom: 5px;">
 
             <!-- Barras -->
