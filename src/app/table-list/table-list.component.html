@@ -1,25 +1,6 @@
-<table>
-    <thead>
-        <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Telefone</th>
-            <th>Endereço</th>
-            <th>Idade</th>
-            <th>Preferencia</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td [innerHtml]="userProfileService.userProfiles[0].name"></td>
-            <td [innerHtml]="userProfileService.userProfiles[0].email"></td>
-            <td [innerHtml]="userProfileService.userProfiles[0].telefone"></td>
-            <td [innerHtml]="userProfileService.userProfiles[0].endereco"></td>
-            <td [innerHtml]="userProfileService.userProfiles[0].idade"></td>
-            <td [innerHtml] ="userProfileService.userProfiles[0].preferencia" [ngClass] = "getClassOfUserPref(userProfileService)"></td>
-        </tr>
-    </tbody>
-</table><br>
+<!--Tabela usando o material disponibilizado pelo angular
+    Documentação: https://material.angular.io/components/table/overview-->
+
 <table mat-table style="width: 100%;" [dataSource]="userProfileService.userProfiles" class="mat-elevation-z8">
 
     <ng-container matColumnDef="name">
