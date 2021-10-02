@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button'; 
+import {MatTableModule} from '@angular/material/table'; 
 import { MainWebsiteBodyComponent } from './main-website-body/main-website-body.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { ButtonBarComponent } from './button-bar/button-bar.component';
@@ -22,7 +23,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
