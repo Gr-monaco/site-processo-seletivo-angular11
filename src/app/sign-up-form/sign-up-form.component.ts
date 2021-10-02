@@ -41,19 +41,17 @@ export class SignUpFormComponent implements OnInit {
   }
 
   functionToCallFormClose(){
-    console.log("chamado!")
     this.emitterFormClose.emit(false);
   }
 
   cancelCadastro() {
-    console.log("ae")
-    this.userProfile.name = '';
+    this.userProfile.name = ''; // Talvez colocar em outra função para resetar dados?
     this.userProfile.email = '';
     this.userProfile.telefone ='';
     this.userProfile.endereco ='';
     this.userProfile.idade = 0;
     this.userProfile.preferencia = '';
-    this.functionToCallFormClose() //criar função nova para fechar forms
+    this.functionToCallFormClose()
   }
 
   updateProfile(event: Event){
