@@ -2,6 +2,7 @@
 
 Este site é o projeto feito para o processo seletivo da Woopi.
 O primeiro commit dele não é o inicio do projeto, pois tive que passar ele de Angular 12 para Angular 11, já que o 12 estava com problemas na hora de fazer build. No final acabei descobrindo que o problema era o Angular 12.
+
 A ideia do site é ser um site de divulgação de programação, aonde existiria noticias sobre programação, além de projetos de usuarios. 
 
 Foi desafiador, pois não tinha ideia de como utilizar este framework, além de não saber nada de TypeScript e não ter feito nenhum projeto com HTML e CSS, contando só com um conhecimento simples destes. Felizmente parte do conhecimento que eu tinha de outras linguagens traduziu sem maiores problemas para TypeScript, com uma ou outra coisa precisando procurar no StackOverflow.
@@ -60,7 +61,7 @@ Os inputs foram interessantes pois foi possivel adicionar validação de entrada
 
 Também mudei o nome do site, utilizando um service que é disponibilizado pelo próprio angular.
 
-No final, adicionei estas funcionalidades a mais
+No final, adicionei estas funcionalidades a mais:
 
 * Input e Output entre objeto filho e parente
 * Material do Angular
@@ -70,4 +71,8 @@ No final, adicionei estas funcionalidades a mais
 * Validação de Input
 * Icones nos Inputs
 * Botões de fechar cadastro e fechar tabela
+* Reatividade dos botões quando mouse passa por cima
 * Alterar nome do site
+
+O site, até o momento, está assim:
+![Alt text](/readme_res/res4.jpg?raw=true "Estado atual do site")
