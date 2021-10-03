@@ -14,3 +14,7 @@ input::-webkit-inner-spin-button {
 .forma{
   width: 330px;
 }
+
+.but-class:hover {
+  background-color: gray;
+}

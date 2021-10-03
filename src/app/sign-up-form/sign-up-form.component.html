@@ -67,7 +67,7 @@
  
     <!-- Botões -->
     <!-- Existe validação de idade, a idade é obrigatória, caso o e-mail ou telefone sejam providênciados, eles devem estar validados-->
-    <button mat-raised-button style="margin-right: 10px;" (click)="functionToCallFormOpen(); updateProfile($event); functionToCallTableOpen()" [disabled]='getButtonState()' >Enviar</button>
-    <button mat-raised-button (click)="cancelCadastro()">Cancelar</button>
+    <button mat-raised-button style="margin-right: 10px;" [ngClass]="isHoverAllowed()" (click)="functionToCallFormOpen(); updateProfile($event); functionToCallTableOpen()" [disabled]='getButtonState()' >Enviar</button>
+    <button mat-raised-button class="but-class" (click)="cancelCadastro()">Cancelar</button>
  </div>
  

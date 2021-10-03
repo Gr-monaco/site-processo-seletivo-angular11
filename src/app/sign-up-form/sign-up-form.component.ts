@@ -79,6 +79,13 @@ export class SignUpFormComponent implements OnInit {
     this.userProfileService.updateData(this.userProfile)
   }
   
+  isHoverAllowed(){
+    if (this.userProfile.idade >=18  && !this.emailFormControl.hasError('email') && !this.telephoneFormControl.hasError('pattern') && !this.telephoneFormControl.hasError('length')){
+      return "but-class"
+    }
+    else ""
+  }
+
   getButtonState(): boolean{ // Talvez seja melhor criar uma função para reduzir esta linha
     if (this.userProfile.idade >=18  && !this.emailFormControl.hasError('email') && !this.telephoneFormControl.hasError('pattern') && !this.telephoneFormControl.hasError('length')){
       return false;
