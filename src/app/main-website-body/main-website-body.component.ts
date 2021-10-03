@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Title } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';  
 
 @Component({
   selector: 'main-website-body',
