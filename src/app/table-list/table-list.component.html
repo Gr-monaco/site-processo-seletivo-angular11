@@ -33,8 +33,8 @@
     </ng-container>
     
     <ng-container matColumnDef="preferencia">
-        <th mat-header-cell *matHeaderCellDef> Preferência </th>
-        <td mat-cell [ngClass] = "getClassOfUserPref(userProfileService)" *matCellDef="let user"> {{user.preferencia}} </td>
+        <th mat-header-cell *matHeaderCellDef> Preferência de linguagem </th>
+        <td mat-cell [ngClass] = "getClassOfUserPref(userProfileService.userProfiles[0])" *matCellDef="let user"> {{user.preferencia}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="['name','email','telefone','endereco','idade','preferencia']"></tr>
