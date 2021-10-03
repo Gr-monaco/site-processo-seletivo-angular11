@@ -25,6 +25,8 @@ export class SignUpFormComponent implements OnInit {
     Validators.email,
   ]);
 
+  // Referência para o regex : https://www.regexpal.com/
+  //                           https://medium.com/@igorrozani/criando-uma-express%C3%A3o-regular-para-telefone-fef7a8f98828
   telephoneFormControl = new FormControl('',[
     Validators.pattern(/(\(?\d{2}\)?\s)?\d{4,5}\-\d{4}/),
     Validators.maxLength(15)
@@ -77,7 +79,7 @@ export class SignUpFormComponent implements OnInit {
     this.userProfileService.updateData(this.userProfile)
   }
   
-  getButtonState(): boolean{
+  getButtonState(): boolean{ // Talvez seja melhor criar uma função para reduzir esta linha
     if (this.userProfile.idade >=18  && !this.emailFormControl.hasError('email') && !this.telephoneFormControl.hasError('pattern') && !this.telephoneFormControl.hasError('length')){
       return false;
     }
