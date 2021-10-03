@@ -1,12 +1,4 @@
-<!--Cabeçalho com imagem-->
-<!--A imgem vem de um site de imagens gratis, se o link desaparecer, não tem imagem-->
-<div class="header">
-    <div >
-        <h1>SITE DE PROGRAMAÇÃO</h1>
-        <p>Central de programação</p>
-    </div>
-</div> 
-
+<header-section></header-section>
 <!--Conteudo do Site-->
 <!--Cada de componente tem um emissor de evento para que o componente pai sabia mudar de estado
     Tentei copiar o estilo de nomes seguindo a documentação do Angular-->
@@ -15,33 +7,6 @@
     <div class="content-inside-div">
         <sign-up-form *ngIf='cadastroVisivel' (emitterFormClose)="updateValueCadastro($event)" (emitterFormOpen)="updateValueCadastro($event)" (emitterTableOpen)="updateValueTabela($event)"></sign-up-form>
         <table-list *ngIf='tabelaVisivel' (emitterTableState)="updateValueTabela($event)"></table-list>  
-        <section style="padding-top: 5px;padding-bottom: 5px;">
-
-            <!--Barras-->
-            <hr style="width:100%;text-align:center;margin-left:0">
-            <hr style=" margin-right: 2%; margin-left: 2%;text-align:center;">
-
-            <h1 style = "margin: 0px; padding: 15px 0px 0px 0px" >
-                Artigos
-            </h1><br>
-            <div style="margin-bottom: 50px;
-                        margin-left: 15px;">
-                <h2>
-                    Você conhece Java?
-                </h2><br>
-                <img src="https://ravel.com.br/blog/wp-content/uploads/2020/09/Java-Capa.png" alt="Logo do Java" class="imagem"><br>
-                <p>Java é uma linguagem de programação e ambiente computacional criada pela empresa Sun Microsystems, na década de 90. 
-                    Apesar de desenvolvida por esta, ela foi adquiroda pela Oracle.</p>
-                <p>Devido a sua capacidade de escrever um código apenas uma vez e rodá-lo em diversos dispositivos, Java tornou-se incrivelmente popular. A tecnologia foi implantada
-                    em diversos dispositivos, desde celulares até computadores.
-                </p><br>
-                <a href="">Clique para continuar</a>  <!--Não foi implementando funcionalidade de ler artigos-->
-            </div>
-
-            <!--Barras-->
-            <hr style=" margin-right: 2%; margin-left: 2%;text-align:center;">
-            <hr style="width:100%;text-align:center;margin-left:0">
-            
-        </section>
+        <articles-section></articles-section>
     </div>
 </div>

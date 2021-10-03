@@ -14,6 +14,8 @@ import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { ButtonBarComponent } from './button-bar/button-bar.component';
 import { TableListComponent } from './table-list/table-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderSectionComponent } from './header-section/header-section.component';
+import { ArticlesSectionComponent } from './articles-section/articles-section.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MainWebsiteBodyComponent,
     SignUpFormComponent,
     ButtonBarComponent,
-    TableListComponent
+    TableListComponent,
+    HeaderSectionComponent,
+    ArticlesSectionComponent
   ],
   imports: [
     BrowserModule,
