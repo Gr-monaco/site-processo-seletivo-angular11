@@ -1,6 +1,14 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UserProfile, UserProfileService } from '../user-profile.service';
+import {ErrorStateMatcher} from '@angular/material/core';
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 @Component({
   selector: 'sign-up-form',
@@ -12,6 +20,17 @@ export class SignUpFormComponent implements OnInit {
              'Python','PHP','HTML',
              'Javascript','Ruby','R',
              'Lisp','Java']
+
+  emailFormControl = new FormControl('', [
+    Validators.email,
+  ]);
+
+  telephoneFormControl = new FormControl('',[
+    Validators.pattern(/(\(?\d{2}\)?\s)?\d{4,5}\-\d{4}/),
+    Validators.maxLength(15)
+  ])
+
+  matcher = new MyErrorStateMatcher();
 
   userProfile : UserProfile = {
     name: '',
@@ -59,7 +78,7 @@ export class SignUpFormComponent implements OnInit {
   }
   
   getButtonState(): boolean{
-    if (this.userProfile.idade >=18){
+    if (this.userProfile.idade >=18  && !this.emailFormControl.hasError('email') && !this.telephoneFormControl.hasError('pattern') && !this.telephoneFormControl.hasError('length')){
       return false;
     }
     else{

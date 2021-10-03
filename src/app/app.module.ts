@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatTableModule} from '@angular/material/table'; 
+import {MatInputModule} from '@angular/material/input'; 
+import {MatIconModule} from '@angular/material/icon'; 
+import {MatSelectModule} from '@angular/material/select'; 
+import {ReactiveFormsModule} from '@angular/forms';
 import { MainWebsiteBodyComponent } from './main-website-body/main-website-body.component';
 import { SignUpFormComponent } from './sign-up-form/sign-up-form.component';
 import { ButtonBarComponent } from './button-bar/button-bar.component';
@@ -24,7 +28,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatIconModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

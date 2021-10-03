@@ -7,25 +7,67 @@
  
     <hr style="width:100%;text-align:left;margin-left:0">
  
-    <!-- Conteudo do formulário -->
-    <label>Nome:</label><br>
-    <input type="text" [(ngModel)]="userProfile.name"><br><br>
-    <label>E-mail:</label><br>
-    <input type="text"[(ngModel)]="userProfile.email"><br><br>
-    <label>Telefone:</label><br>
-    <input type="text" [(ngModel)]="userProfile.telefone"><br><br>
-    <label>Endereço:</label><br>
-    <input type="text" [(ngModel)]="userProfile.endereco"><br><br>
-    <label>Idade:</label><br>
-    <input type="number" digitOnly [(ngModel)]="userProfile.idade"><br><br>
-    <label>Preferência:</label><br>
-    <select name="linguagens" id="ling" [(ngModel)]="userProfile.preferencia">
-       <option [value]="preference" *ngFor="let preference of options">{{preference}}</option>
-    </select><br><br>
+   <!--Conteudo do formulário-->
+   <!--Não estou conseguindo colocar classes e passar a formatação para os forms
+      Deve ser alguma coisa como o Angular compila, devo olhar na documentação
+      Por enquanto, tudo ira ficar inline-->
+   <div>
+      <!--Referência para icones dos formulários: https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/-->
+      <!--Nome-->
+      <mat-form-field style="width: 330px;" appearance="fill">
+         <mat-label>Nome</mat-label>
+         <input matInput  value="Gabriel" [(ngModel)]="userProfile.name">
+         <mat-icon matSuffix>person</mat-icon>
+      </mat-form-field><br>
+
+      <!--E-mail-->
+      <mat-form-field style="width: 330px;" appearance="fill">
+         <mat-label>E-mail</mat-label>
+         <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher "
+               placeholder="Ex. email@provedor.com" [(ngModel)]="userProfile.email">
+         <mat-error *ngIf="emailFormControl.hasError('email')">
+         Por favor, insira um e-mail válido.
+         </mat-error>
+         <mat-icon matSuffix> email</mat-icon>
+      </mat-form-field><br>
+
+      <mat-form-field style="width: 330px;" appearance="fill">
+         <mat-label>Telefone</mat-label>
+         <span matPrefix>+55 &nbsp;</span>
+         <input type="tel" [formControl]="telephoneFormControl" [errorStateMatcher]="matcher" matInput placeholder="(55)95555-555"
+               [(ngModel)]="userProfile.telefone">
+         <mat-error *ngIf="telephoneFormControl.hasError('pattern') || telephoneFormControl.hasError('lenght') ">
+            Por favor, insira um telefone valido.
+         </mat-error>
+         <mat-icon matSuffix>call</mat-icon>
+      </mat-form-field><br>
+
+      <mat-form-field style="width: 330px;" appearance="fill">
+         <mat-label>Endereço</mat-label>
+         <input type="text" matInput [(ngModel)]="userProfile.endereco">
+         <mat-icon matSuffix>home</mat-icon>
+      </mat-form-field><br>
+
+      <mat-form-field style="width: 330px;" appearance="fill">
+         <mat-label>Idade *</mat-label>
+         <input type="number" matInput [(ngModel)]="userProfile.idade" >
+         <mat-icon matSuffix>cake</mat-icon>
+      </mat-form-field><br>
+
+      <mat-form-field style="width: 330px;" appearance="fill">
+         <mat-label>Preferência de linguagem</mat-label>
+         <mat-select [(ngModel)]="userProfile.preferencia">
+         <mat-option *ngFor="let preference of options" [value]="preference">
+            {{preference}}
+         </mat-option>
+         </mat-select>
+      </mat-form-field>
+    </div>
+      
  
     <!-- Botões -->
-    <!-- Unico botão que tem validação é de idade-->
-    <button mat-raised-button (click)="functionToCallFormOpen(); updateProfile($event); functionToCallTableOpen()" [disabled]='getButtonState()' >Enviar</button>
+    <!-- Existe validação de idade, a idade é obrigatória, caso o e-mail ou telefone sejam providênciados, eles devem estar validados-->
+    <button mat-raised-button style="margin-right: 10px;" (click)="functionToCallFormOpen(); updateProfile($event); functionToCallTableOpen()" [disabled]='getButtonState()' >Enviar</button>
     <button mat-raised-button (click)="cancelCadastro()">Cancelar</button>
  </div>
  
