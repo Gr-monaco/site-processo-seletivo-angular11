@@ -3,6 +3,8 @@ import { UserProfile, UserProfileService } from '../user-profile.service';
 import {ErrorStateMatcher} from '@angular/material/core';
 import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 
+//Documentação para validadores: https://angular.io/api/forms/Validators
+//                               https://angular.io/guide/form-validation
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
@@ -42,7 +44,8 @@ export class SignUpFormComponent implements OnInit {
     idade: 0,
     preferencia: ''
   }
-
+  
+  //Emissores de eventos
   @Output() emitterFormOpen = new EventEmitter<boolean>();
   @Output() emitterTableOpen = new EventEmitter<boolean>();
   @Output() emitterFormClose = new EventEmitter<boolean>();
@@ -79,7 +82,7 @@ export class SignUpFormComponent implements OnInit {
     this.userProfileService.updateData(this.userProfile)
   }
   
-  isHoverAllowed(){
+  isHoverAllowed(){ //Código é repetido, melhor criar outra função para reutilizar código
     if (this.userProfile.idade >=18  && !this.emailFormControl.hasError('email') && !this.telephoneFormControl.hasError('pattern') && !this.telephoneFormControl.hasError('length')){
       return "but-class"
     }

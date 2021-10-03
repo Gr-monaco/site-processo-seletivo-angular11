@@ -19,8 +19,8 @@ export class MainWebsiteBodyComponent implements OnInit {
   }
 
   public setTitle(newTitle: string) {
-    this.titleService.setTitle(newTitle);
-  }
+    this.titleService.setTitle(newTitle);   //Pode ser utilizado para mudar de página
+  }                                         //ou sinalizar conteudo aberto
 
   updateValueCadastro(val: boolean) {
     this.cadastroVisivel = val;

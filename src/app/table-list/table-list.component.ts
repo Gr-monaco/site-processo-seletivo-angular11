@@ -7,7 +7,8 @@ import { UserProfileService } from '../user-profile.service';
   styleUrls: ['./table-list.component.css']
 })
 export class TableListComponent implements OnInit {
-
+  
+  // Emissor de eventos
   @Output() emitterTableState = new EventEmitter<boolean>();
 
   constructor(public userProfileService : UserProfileService) { }
